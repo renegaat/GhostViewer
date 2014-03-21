@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E15841118DC8D3500E1BA52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841018DC8D3500E1BA52 /* Foundation.framework */; };
+		8E15841318DC8D3500E1BA52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841218DC8D3500E1BA52 /* CoreGraphics.framework */; };
+		8E15841518DC8D3500E1BA52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841418DC8D3500E1BA52 /* UIKit.framework */; };
+		8E15841B18DC8D3500E1BA52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E15841918DC8D3500E1BA52 /* InfoPlist.strings */; };
+		8E15841D18DC8D3500E1BA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15841C18DC8D3500E1BA52 /* main.m */; };
+		8E15842118DC8D3500E1BA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15842018DC8D3500E1BA52 /* AppDelegate.m */; };
+		8E15842418DC8D3500E1BA52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E15842218DC8D3500E1BA52 /* Main.storyboard */; };
+		8E15842718DC8D3500E1BA52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15842618DC8D3500E1BA52 /* ViewController.m */; };
+		8E15842918DC8D3500E1BA52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E15842818DC8D3500E1BA52 /* Images.xcassets */; };
+		8E15843018DC8D3600E1BA52 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15842F18DC8D3600E1BA52 /* XCTest.framework */; };
+		8E15843118DC8D3600E1BA52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841018DC8D3500E1BA52 /* Foundation.framework */; };
+		8E15843218DC8D3600E1BA52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841418DC8D3500E1BA52 /* UIKit.framework */; };
+		8E15843A18DC8D3600E1BA52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E15843818DC8D3600E1BA52 /* InfoPlist.strings */; };
+		8E15843C18DC8D3600E1BA52 /* GhostViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E15843318DC8D3600E1BA52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E15840518DC8D3400E1BA52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E15840C18DC8D3500E1BA52;
+			remoteInfo = GhostViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E15840D18DC8D3500E1BA52 /* GhostViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhostViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E15841018DC8D3500E1BA52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8E15841218DC8D3500E1BA52 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8E15841418DC8D3500E1BA52 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8E15841818DC8D3500E1BA52 /* GhostViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GhostViewer-Info.plist"; sourceTree = "<group>"; };
+		8E15841A18DC8D3500E1BA52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E15841C18DC8D3500E1BA52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8E15841E18DC8D3500E1BA52 /* GhostViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GhostViewer-Prefix.pch"; sourceTree = "<group>"; };
+		8E15841F18DC8D3500E1BA52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8E15842018DC8D3500E1BA52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8E15842318DC8D3500E1BA52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E15842518DC8D3500E1BA52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8E15842618DC8D3500E1BA52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8E15842818DC8D3500E1BA52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8E15842E18DC8D3600E1BA52 /* GhostViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhostViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E15842F18DC8D3600E1BA52 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8E15843718DC8D3600E1BA52 /* GhostViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GhostViewerTests-Info.plist"; sourceTree = "<group>"; };
+		8E15843918DC8D3600E1BA52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhostViewerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E15840A18DC8D3500E1BA52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E15841318DC8D3500E1BA52 /* CoreGraphics.framework in Frameworks */,
+				8E15841518DC8D3500E1BA52 /* UIKit.framework in Frameworks */,
+				8E15841118DC8D3500E1BA52 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E15842B18DC8D3500E1BA52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E15843018DC8D3600E1BA52 /* XCTest.framework in Frameworks */,
+				8E15843218DC8D3600E1BA52 /* UIKit.framework in Frameworks */,
+				8E15843118DC8D3600E1BA52 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E15840418DC8D3400E1BA52 = {
+			isa = PBXGroup;
+			children = (
+				8E15841618DC8D3500E1BA52 /* GhostViewer */,
+				8E15843518DC8D3600E1BA52 /* GhostViewerTests */,
+				8E15840F18DC8D3500E1BA52 /* Frameworks */,
+				8E15840E18DC8D3500E1BA52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E15840E18DC8D3500E1BA52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E15840D18DC8D3500E1BA52 /* GhostViewer.app */,
+				8E15842E18DC8D3600E1BA52 /* GhostViewerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E15840F18DC8D3500E1BA52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E15841018DC8D3500E1BA52 /* Foundation.framework */,
+				8E15841218DC8D3500E1BA52 /* CoreGraphics.framework */,
+				8E15841418DC8D3500E1BA52 /* UIKit.framework */,
+				8E15842F18DC8D3600E1BA52 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E15841618DC8D3500E1BA52 /* GhostViewer */ = {
+			isa = PBXGroup;
+			children = (
+				8E15841F18DC8D3500E1BA52 /* AppDelegate.h */,
+				8E15842018DC8D3500E1BA52 /* AppDelegate.m */,
+				8E15842218DC8D3500E1BA52 /* Main.storyboard */,
+				8E15842518DC8D3500E1BA52 /* ViewController.h */,
+				8E15842618DC8D3500E1BA52 /* ViewController.m */,
+				8E15842818DC8D3500E1BA52 /* Images.xcassets */,
+				8E15841718DC8D3500E1BA52 /* Supporting Files */,
+			);
+			path = GhostViewer;
+			sourceTree = "<group>";
+		};
+		8E15841718DC8D3500E1BA52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E15841818DC8D3500E1BA52 /* GhostViewer-Info.plist */,
+				8E15841918DC8D3500E1BA52 /* InfoPlist.strings */,
+				8E15841C18DC8D3500E1BA52 /* main.m */,
+				8E15841E18DC8D3500E1BA52 /* GhostViewer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E15843518DC8D3600E1BA52 /* GhostViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */,
+				8E15843618DC8D3600E1BA52 /* Supporting Files */,
+			);
+			path = GhostViewerTests;
+			sourceTree = "<group>";
+		};
+		8E15843618DC8D3600E1BA52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E15843718DC8D3600E1BA52 /* GhostViewerTests-Info.plist */,
+				8E15843818DC8D3600E1BA52 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E15840C18DC8D3500E1BA52 /* GhostViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E15843F18DC8D3600E1BA52 /* Build configuration list for PBXNativeTarget "GhostViewer" */;
+			buildPhases = (
+				8E15840918DC8D3500E1BA52 /* Sources */,
+				8E15840A18DC8D3500E1BA52 /* Frameworks */,
+				8E15840B18DC8D3500E1BA52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GhostViewer;
+			productName = GhostViewer;
+			productReference = 8E15840D18DC8D3500E1BA52 /* GhostViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E15842D18DC8D3500E1BA52 /* GhostViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E15844218DC8D3600E1BA52 /* Build configuration list for PBXNativeTarget "GhostViewerTests" */;
+			buildPhases = (
+				8E15842A18DC8D3500E1BA52 /* Sources */,
+				8E15842B18DC8D3500E1BA52 /* Frameworks */,
+				8E15842C18DC8D3500E1BA52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E15843418DC8D3600E1BA52 /* PBXTargetDependency */,
+			);
+			name = GhostViewerTests;
+			productName = GhostViewerTests;
+			productReference = 8E15842E18DC8D3600E1BA52 /* GhostViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E15840518DC8D3400E1BA52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = LBI;
+				TargetAttributes = {
+					8E15842D18DC8D3500E1BA52 = {
+						TestTargetID = 8E15840C18DC8D3500E1BA52;
+					};
+				};
+			};
+			buildConfigurationList = 8E15840818DC8D3400E1BA52 /* Build configuration list for PBXProject "GhostViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E15840418DC8D3400E1BA52;
+			productRefGroup = 8E15840E18DC8D3500E1BA52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E15840C18DC8D3500E1BA52 /* GhostViewer */,
+				8E15842D18DC8D3500E1BA52 /* GhostViewerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E15840B18DC8D3500E1BA52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E15842918DC8D3500E1BA52 /* Images.xcassets in Resources */,
+				8E15841B18DC8D3500E1BA52 /* InfoPlist.strings in Resources */,
+				8E15842418DC8D3500E1BA52 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E15842C18DC8D3500E1BA52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E15843A18DC8D3600E1BA52 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E15840918DC8D3500E1BA52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E15842718DC8D3500E1BA52 /* ViewController.m in Sources */,
+				8E15842118DC8D3500E1BA52 /* AppDelegate.m in Sources */,
+				8E15841D18DC8D3500E1BA52 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E15842A18DC8D3500E1BA52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E15843C18DC8D3600E1BA52 /* GhostViewerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E15843418DC8D3600E1BA52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E15840C18DC8D3500E1BA52 /* GhostViewer */;
+			targetProxy = 8E15843318DC8D3600E1BA52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E15841918DC8D3500E1BA52 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E15841A18DC8D3500E1BA52 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8E15842218DC8D3500E1BA52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E15842318DC8D3500E1BA52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E15843818DC8D3600E1BA52 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E15843918DC8D3600E1BA52 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E15843D18DC8D3600E1BA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		8E15843E18DC8D3600E1BA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E15844018DC8D3600E1BA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GhostViewer/GhostViewer-Prefix.pch";
+				INFOPLIST_FILE = "GhostViewer/GhostViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8E15844118DC8D3600E1BA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GhostViewer/GhostViewer-Prefix.pch";
+				INFOPLIST_FILE = "GhostViewer/GhostViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8E15844318DC8D3600E1BA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GhostViewer.app/GhostViewer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GhostViewer/GhostViewer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GhostViewerTests/GhostViewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8E15844418DC8D3600E1BA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GhostViewer.app/GhostViewer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GhostViewer/GhostViewer-Prefix.pch";
+				INFOPLIST_FILE = "GhostViewerTests/GhostViewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E15840818DC8D3400E1BA52 /* Build configuration list for PBXProject "GhostViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E15843D18DC8D3600E1BA52 /* Debug */,
+				8E15843E18DC8D3600E1BA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E15843F18DC8D3600E1BA52 /* Build configuration list for PBXNativeTarget "GhostViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E15844018DC8D3600E1BA52 /* Debug */,
+				8E15844118DC8D3600E1BA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8E15844218DC8D3600E1BA52 /* Build configuration list for PBXNativeTarget "GhostViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E15844318DC8D3600E1BA52 /* Debug */,
+				8E15844418DC8D3600E1BA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E15840518DC8D3400E1BA52 /* Project object */;
+}
