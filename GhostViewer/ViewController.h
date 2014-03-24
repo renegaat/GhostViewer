@@ -11,7 +11,6 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-
 @property (strong, nonatomic) IBOutlet UITextField  *ipField;
 @property (strong, nonatomic) IBOutlet UITextView   *messageView;
 - (IBAction)ipRefreshClick:(UIButton *)sender;

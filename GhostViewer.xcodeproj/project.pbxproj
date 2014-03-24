@@ -22,6 +22,8 @@
 		8E15843A18DC8D3600E1BA52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E15843818DC8D3600E1BA52 /* InfoPlist.strings */; };
 		8E15843C18DC8D3600E1BA52 /* GhostViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */; };
 		8E8E02D918E06EC300E24CE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02D818E06EC300E24CE7 /* MapKit.framework */; };
+		8E8E02DC18E0807A00E24CE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */; };
+		8E8E02E018E0810200E24CE7 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02DF18E0810200E24CE7 /* Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		8E15843918DC8D3600E1BA52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhostViewerTests.m; sourceTree = "<group>"; };
 		8E8E02D818E06EC300E24CE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E8E02DE18E0810200E24CE7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		8E8E02DF18E0810200E24CE7 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8E02DC18E0807A00E24CE7 /* CoreLocation.framework in Frameworks */,
 				8E8E02D918E06EC300E24CE7 /* MapKit.framework in Frameworks */,
 				8E15841318DC8D3500E1BA52 /* CoreGraphics.framework in Frameworks */,
 				8E15841518DC8D3500E1BA52 /* UIKit.framework in Frameworks */,
@@ -104,6 +110,7 @@
 		8E15840F18DC8D3500E1BA52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */,
 				8E8E02D818E06EC300E24CE7 /* MapKit.framework */,
 				8E15841018DC8D3500E1BA52 /* Foundation.framework */,
 				8E15841218DC8D3500E1BA52 /* CoreGraphics.framework */,
@@ -116,11 +123,11 @@
 		8E15841618DC8D3500E1BA52 /* GhostViewer */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E02E118E084D100E24CE7 /* Classes */,
+				8E8E02DA18E07B7600E24CE7 /* ViewController */,
 				8E15841F18DC8D3500E1BA52 /* AppDelegate.h */,
 				8E15842018DC8D3500E1BA52 /* AppDelegate.m */,
 				8E15842218DC8D3500E1BA52 /* Main.storyboard */,
-				8E15842518DC8D3500E1BA52 /* ViewController.h */,
-				8E15842618DC8D3500E1BA52 /* ViewController.m */,
 				8E15842818DC8D3500E1BA52 /* Images.xcassets */,
 				8E15841718DC8D3500E1BA52 /* Supporting Files */,
 			);
@@ -154,6 +161,32 @@
 				8E15843818DC8D3600E1BA52 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E8E02DA18E07B7600E24CE7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E15842518DC8D3500E1BA52 /* ViewController.h */,
+				8E15842618DC8D3500E1BA52 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		8E8E02DD18E080C300E24CE7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8E8E02DE18E0810200E24CE7 /* Utility.h */,
+				8E8E02DF18E0810200E24CE7 /* Utility.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		8E8E02E118E084D100E24CE7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8E8E02DD18E080C300E24CE7 /* Utility */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8E02E018E0810200E24CE7 /* Utility.m in Sources */,
 				8E15842718DC8D3500E1BA52 /* ViewController.m in Sources */,
 				8E15842118DC8D3500E1BA52 /* AppDelegate.m in Sources */,
 				8E15841D18DC8D3500E1BA52 /* main.m in Sources */,
