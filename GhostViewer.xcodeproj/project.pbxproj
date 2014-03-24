@@ -21,6 +21,7 @@
 		8E15843218DC8D3600E1BA52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841418DC8D3500E1BA52 /* UIKit.framework */; };
 		8E15843A18DC8D3600E1BA52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E15843818DC8D3600E1BA52 /* InfoPlist.strings */; };
 		8E15843C18DC8D3600E1BA52 /* GhostViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */; };
+		8E8E02D918E06EC300E24CE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02D818E06EC300E24CE7 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8E15843718DC8D3600E1BA52 /* GhostViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GhostViewerTests-Info.plist"; sourceTree = "<group>"; };
 		8E15843918DC8D3600E1BA52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhostViewerTests.m; sourceTree = "<group>"; };
+		8E8E02D818E06EC300E24CE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8E02D918E06EC300E24CE7 /* MapKit.framework in Frameworks */,
 				8E15841318DC8D3500E1BA52 /* CoreGraphics.framework in Frameworks */,
 				8E15841518DC8D3500E1BA52 /* UIKit.framework in Frameworks */,
 				8E15841118DC8D3500E1BA52 /* Foundation.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		8E15840F18DC8D3500E1BA52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E02D818E06EC300E24CE7 /* MapKit.framework */,
 				8E15841018DC8D3500E1BA52 /* Foundation.framework */,
 				8E15841218DC8D3500E1BA52 /* CoreGraphics.framework */,
 				8E15841418DC8D3500E1BA52 /* UIKit.framework */,
@@ -467,6 +471,7 @@
 				8E15844118DC8D3600E1BA52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E15844218DC8D3600E1BA52 /* Build configuration list for PBXNativeTarget "GhostViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +480,7 @@
 				8E15844418DC8D3600E1BA52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
