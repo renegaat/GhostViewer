@@ -24,6 +24,7 @@
 		8E8E02D918E06EC300E24CE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02D818E06EC300E24CE7 /* MapKit.framework */; };
 		8E8E02DC18E0807A00E24CE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */; };
 		8E8E02E018E0810200E24CE7 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02DF18E0810200E24CE7 /* Utility.m */; };
+		8E8E02E518E198EF00E24CE7 /* SimpleGhost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E8E02DE18E0810200E24CE7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		8E8E02DF18E0810200E24CE7 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		8E8E02E318E198EF00E24CE7 /* SimpleGhost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGhost.h; sourceTree = "<group>"; };
+		8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleGhost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,9 +187,19 @@
 		8E8E02E118E084D100E24CE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E02E218E198D500E24CE7 /* model */,
 				8E8E02DD18E080C300E24CE7 /* Utility */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		8E8E02E218E198D500E24CE7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8E8E02E318E198EF00E24CE7 /* SimpleGhost.h */,
+				8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +304,7 @@
 			files = (
 				8E8E02E018E0810200E24CE7 /* Utility.m in Sources */,
 				8E15842718DC8D3500E1BA52 /* ViewController.m in Sources */,
+				8E8E02E518E198EF00E24CE7 /* SimpleGhost.m in Sources */,
 				8E15842118DC8D3500E1BA52 /* AppDelegate.m in Sources */,
 				8E15841D18DC8D3500E1BA52 /* main.m in Sources */,
 			);
