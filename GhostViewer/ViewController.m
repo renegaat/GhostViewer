@@ -13,8 +13,8 @@
 
 bool running = false;
 
-NSString * const GHOSTLISTRESTCALL = @"admin/getAllSimpleGhosts/";
-NSString * const GHOSTRESTCALL = @"admin/getSimpleGhostById/";
+NSString * const GHOSTLISTRESTCALL = @"/DDR_GhostHive/admin/getAllSimpleGhosts/";
+NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
 
 @implementation ViewController
 
@@ -61,17 +61,35 @@ NSString * const GHOSTRESTCALL = @"admin/getSimpleGhostById/";
     _mainTimer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)(10.0) target:self selector:@selector(callGhostService) userInfo:nil repeats:TRUE];
 }
 
-- (void)callGhostService
-{
+- (void)callGhostService{
     NSLog(@"callGhostService : %@",_pollURL);
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:_pollURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
 
-    /*
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_pollURL]] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-         NSLog(@"Received data : %@", data);
-        
-        //desirialize requedst
-     
-    }];*/
+    if (connection) {
+        //connection ok
+         self.ipField.backgroundColor = [UIColor greenColor];
+    }else{
+        //connection fail
+        self.ipField.backgroundColor = [UIColor redColor];
+    }
+}
+
+- (void)connection:(NSURLConnection *) connection didReceiveData:(NSData *)data {
+    NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"URl Reponse : %@",response);
+    // desirialize data and update map
+    
+
+}
+
+-(void)connectionDidFinishLoading: (NSURLConnection *)connection {
+    connection = nil;
+}
+
+- (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error{
+    NSLog(@"Connection to ghost service failed");
+    self.ipField.backgroundColor = [UIColor redColor];
 }
 
 @end
