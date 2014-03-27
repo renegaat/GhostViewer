@@ -7,9 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "SimpleGhost.h"
+#import "GhostAnnotation.h"
 
+
+
+// private
 @interface ViewController ()
+-(void)updateAnnotations;
 @end
+
 
 bool running = false;
 
@@ -26,7 +33,11 @@ NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
+    
+    if(_ghostStack==nil){
+        _ghostStack = [[NSMutableArray alloc]init];
     }
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -69,19 +80,50 @@ NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
     if (connection) {
         //connection ok
          self.ipField.backgroundColor = [UIColor greenColor];
-    }else{
+       }else{
         //connection fail
         self.ipField.backgroundColor = [UIColor redColor];
     }
 }
 
 - (void)connection:(NSURLConnection *) connection didReceiveData:(NSData *)data {
-    NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"URl Reponse : %@",response);
-    // desirialize data and update map
+    // desirialize data and update ghost stack
+    NSError *jsonParsingError = nil;
+    NSArray *resultStack = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
     
-
+    //clear the stack
+    [_ghostStack removeAllObjects];
+    
+    for(int i=0; i<[resultStack count];i++)
+    {
+        _dataObject= [resultStack objectAtIndex:i];
+        NSLog(@"ID: %@", [_dataObject objectForKey:@"id"]);
+        NSLog(@"NAME: %@", [_dataObject objectForKey:@"name"]);
+        
+        SimpleGhost *tmpGhost = [[SimpleGhost alloc] init:[[_dataObject objectForKey:@"id"]integerValue]
+        name:[_dataObject objectForKey:@"name"]
+        longitude:[[_dataObject objectForKey:@"longitude"]floatValue]
+        latitude:[[_dataObject objectForKey:@"latitude"]floatValue]];
+        
+        [_ghostStack addObject:tmpGhost];
+    }
+    if([_ghostStack count] > 0){
+        [self updateAnnotations];
+    }
 }
+
+-(void) updateAnnotations {
+    [_mapView removeAnnotations:_mapView.annotations];
+    // iterate and draw annotations
+    for(SimpleGhost *simpleGhost in _ghostStack){
+        GhostAnnotation *temp = [[GhostAnnotation alloc]init];
+        [temp setTitle:simpleGhost.name];
+        [temp setSubtitle: @""];
+        [temp setCoordinate:CLLocationCoordinate2DMake([simpleGhost latitude],[simpleGhost longitude])];
+        [_mapView addAnnotation:temp];
+    }
+}
+
 
 -(void)connectionDidFinishLoading: (NSURLConnection *)connection {
     connection = nil;

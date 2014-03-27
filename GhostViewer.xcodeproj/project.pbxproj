@@ -25,6 +25,10 @@
 		8E8E02DC18E0807A00E24CE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */; };
 		8E8E02E018E0810200E24CE7 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02DF18E0810200E24CE7 /* Utility.m */; };
 		8E8E02E518E198EF00E24CE7 /* SimpleGhost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */; };
+		8E8E02E818E422D600E24CE7 /* ComplexGhost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02E718E422D600E24CE7 /* ComplexGhost.m */; };
+		8E8E02EB18E427BE00E24CE7 /* AbstractGhost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02EA18E427BE00E24CE7 /* AbstractGhost.m */; };
+		8E8E02EF18E43BC500E24CE7 /* GhostAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02EE18E43BC500E24CE7 /* GhostAnnotation.m */; };
+		8E8E02F218E43BE500E24CE7 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02F118E43BE500E24CE7 /* LocationAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,14 @@
 		8E8E02DF18E0810200E24CE7 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		8E8E02E318E198EF00E24CE7 /* SimpleGhost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGhost.h; sourceTree = "<group>"; };
 		8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleGhost.m; sourceTree = "<group>"; };
+		8E8E02E618E422D600E24CE7 /* ComplexGhost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexGhost.h; sourceTree = "<group>"; };
+		8E8E02E718E422D600E24CE7 /* ComplexGhost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexGhost.m; sourceTree = "<group>"; };
+		8E8E02E918E427BE00E24CE7 /* AbstractGhost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractGhost.h; sourceTree = "<group>"; };
+		8E8E02EA18E427BE00E24CE7 /* AbstractGhost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractGhost.m; sourceTree = "<group>"; };
+		8E8E02ED18E43BC500E24CE7 /* GhostAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostAnnotation.h; sourceTree = "<group>"; };
+		8E8E02EE18E43BC500E24CE7 /* GhostAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GhostAnnotation.m; sourceTree = "<group>"; };
+		8E8E02F018E43BE500E24CE7 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
+		8E8E02F118E43BE500E24CE7 /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,10 +208,26 @@
 		8E8E02E218E198D500E24CE7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E02EC18E43BA400E24CE7 /* annotation */,
 				8E8E02E318E198EF00E24CE7 /* SimpleGhost.h */,
 				8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */,
+				8E8E02E618E422D600E24CE7 /* ComplexGhost.h */,
+				8E8E02E718E422D600E24CE7 /* ComplexGhost.m */,
+				8E8E02E918E427BE00E24CE7 /* AbstractGhost.h */,
+				8E8E02EA18E427BE00E24CE7 /* AbstractGhost.m */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		8E8E02EC18E43BA400E24CE7 /* annotation */ = {
+			isa = PBXGroup;
+			children = (
+				8E8E02ED18E43BC500E24CE7 /* GhostAnnotation.h */,
+				8E8E02EE18E43BC500E24CE7 /* GhostAnnotation.m */,
+				8E8E02F018E43BE500E24CE7 /* LocationAnnotation.h */,
+				8E8E02F118E43BE500E24CE7 /* LocationAnnotation.m */,
+			);
+			name = annotation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,8 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8E02E818E422D600E24CE7 /* ComplexGhost.m in Sources */,
+				8E8E02EB18E427BE00E24CE7 /* AbstractGhost.m in Sources */,
 				8E8E02E018E0810200E24CE7 /* Utility.m in Sources */,
 				8E15842718DC8D3500E1BA52 /* ViewController.m in Sources */,
+				8E8E02F218E43BE500E24CE7 /* LocationAnnotation.m in Sources */,
+				8E8E02EF18E43BC500E24CE7 /* GhostAnnotation.m in Sources */,
 				8E8E02E518E198EF00E24CE7 /* SimpleGhost.m in Sources */,
 				8E15842118DC8D3500E1BA52 /* AppDelegate.m in Sources */,
 				8E15841D18DC8D3500E1BA52 /* main.m in Sources */,
@@ -433,8 +465,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GhostViewer/GhostViewer-Prefix.pch";
 				INFOPLIST_FILE = "GhostViewer/GhostViewer-Info.plist";
@@ -449,8 +481,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GhostViewer/GhostViewer-Prefix.pch";
 				INFOPLIST_FILE = "GhostViewer/GhostViewer-Info.plist";

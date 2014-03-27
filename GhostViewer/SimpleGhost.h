@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AbstractGhost.h"
 
-@interface SimpleGhost : NSObject
+
+@interface SimpleGhost : AbstractGhost
+
+
+
+- (id)init:(int)id name:(NSString*)name longitude:(double)longitude latitude:(double)latitude;
 
 @end
+
+

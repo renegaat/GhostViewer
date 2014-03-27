@@ -12,13 +12,15 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate,NSURLConnectionDelegate>
 
-
 @property (strong, nonatomic) IBOutlet MKMapView    *mapView;
 @property (strong, nonatomic) IBOutlet UITextField  *ipField;
 @property (strong, nonatomic) IBOutlet UITextView   *messageView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSTimer *mainTimer;
 @property (strong, nonatomic) NSString *pollURL;
+@property (strong, nonatomic) NSDictionary *dataObject;
+@property (strong, nonatomic) NSMutableArray *ghostStack;
+
 
 //constants
 extern NSString * const GHOSTLISTRESTCALL;
