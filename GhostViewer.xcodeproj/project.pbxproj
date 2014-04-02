@@ -21,6 +21,8 @@
 		8E15843218DC8D3600E1BA52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15841418DC8D3500E1BA52 /* UIKit.framework */; };
 		8E15843A18DC8D3600E1BA52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E15843818DC8D3600E1BA52 /* InfoPlist.strings */; };
 		8E15843C18DC8D3600E1BA52 /* GhostViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */; };
+		8E34FBC118EC4A77000108DD /* LocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34FBC018EC4A77000108DD /* LocationAnnotationView.m */; };
+		8E34FBC418EC517B000108DD /* GhostAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E34FBC318EC517B000108DD /* GhostAnnotationView.m */; };
 		8E8E02D918E06EC300E24CE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02D818E06EC300E24CE7 /* MapKit.framework */; };
 		8E8E02DC18E0807A00E24CE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */; };
 		8E8E02E018E0810200E24CE7 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02DF18E0810200E24CE7 /* Utility.m */; };
@@ -29,6 +31,7 @@
 		8E8E02EB18E427BE00E24CE7 /* AbstractGhost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02EA18E427BE00E24CE7 /* AbstractGhost.m */; };
 		8E8E02EF18E43BC500E24CE7 /* GhostAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02EE18E43BC500E24CE7 /* GhostAnnotation.m */; };
 		8E8E02F218E43BE500E24CE7 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02F118E43BE500E24CE7 /* LocationAnnotation.m */; };
+		8E8E02F518E9B7DE00E24CE7 /* AbstractAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E02F418E9B7DE00E24CE7 /* AbstractAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,10 @@
 		8E15843718DC8D3600E1BA52 /* GhostViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GhostViewerTests-Info.plist"; sourceTree = "<group>"; };
 		8E15843918DC8D3600E1BA52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E15843B18DC8D3600E1BA52 /* GhostViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhostViewerTests.m; sourceTree = "<group>"; };
+		8E34FBBF18EC4A77000108DD /* LocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotationView.h; sourceTree = "<group>"; };
+		8E34FBC018EC4A77000108DD /* LocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotationView.m; sourceTree = "<group>"; };
+		8E34FBC218EC517B000108DD /* GhostAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostAnnotationView.h; sourceTree = "<group>"; };
+		8E34FBC318EC517B000108DD /* GhostAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GhostAnnotationView.m; sourceTree = "<group>"; };
 		8E8E02D818E06EC300E24CE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8E8E02DB18E0807A00E24CE7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E8E02DE18E0810200E24CE7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
@@ -75,6 +82,8 @@
 		8E8E02EE18E43BC500E24CE7 /* GhostAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GhostAnnotation.m; sourceTree = "<group>"; };
 		8E8E02F018E43BE500E24CE7 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
 		8E8E02F118E43BE500E24CE7 /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
+		8E8E02F318E9B7DE00E24CE7 /* AbstractAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAnnotation.h; sourceTree = "<group>"; };
+		8E8E02F418E9B7DE00E24CE7 /* AbstractAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8E02E118E084D100E24CE7 /* Classes */,
-				8E8E02DA18E07B7600E24CE7 /* ViewController */,
+				8E8E02DA18E07B7600E24CE7 /* viewController */,
 				8E15841F18DC8D3500E1BA52 /* AppDelegate.h */,
 				8E15842018DC8D3500E1BA52 /* AppDelegate.m */,
 				8E15842218DC8D3500E1BA52 /* Main.storyboard */,
@@ -178,29 +187,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8E8E02DA18E07B7600E24CE7 /* ViewController */ = {
+		8E34FBBE18EC49E4000108DD /* views */ = {
+			isa = PBXGroup;
+			children = (
+				8E34FBBF18EC4A77000108DD /* LocationAnnotationView.h */,
+				8E34FBC018EC4A77000108DD /* LocationAnnotationView.m */,
+				8E34FBC218EC517B000108DD /* GhostAnnotationView.h */,
+				8E34FBC318EC517B000108DD /* GhostAnnotationView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		8E8E02DA18E07B7600E24CE7 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
 				8E15842518DC8D3500E1BA52 /* ViewController.h */,
 				8E15842618DC8D3500E1BA52 /* ViewController.m */,
 			);
-			name = ViewController;
+			name = viewController;
 			sourceTree = "<group>";
 		};
-		8E8E02DD18E080C300E24CE7 /* Utility */ = {
+		8E8E02DD18E080C300E24CE7 /* utility */ = {
 			isa = PBXGroup;
 			children = (
 				8E8E02DE18E0810200E24CE7 /* Utility.h */,
 				8E8E02DF18E0810200E24CE7 /* Utility.m */,
 			);
-			name = Utility;
+			name = utility;
 			sourceTree = "<group>";
 		};
 		8E8E02E118E084D100E24CE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E34FBBE18EC49E4000108DD /* views */,
 				8E8E02E218E198D500E24CE7 /* model */,
-				8E8E02DD18E080C300E24CE7 /* Utility */,
+				8E8E02DD18E080C300E24CE7 /* utility */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -208,13 +229,8 @@
 		8E8E02E218E198D500E24CE7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E02F618E9B82B00E24CE7 /* ghost */,
 				8E8E02EC18E43BA400E24CE7 /* annotation */,
-				8E8E02E318E198EF00E24CE7 /* SimpleGhost.h */,
-				8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */,
-				8E8E02E618E422D600E24CE7 /* ComplexGhost.h */,
-				8E8E02E718E422D600E24CE7 /* ComplexGhost.m */,
-				8E8E02E918E427BE00E24CE7 /* AbstractGhost.h */,
-				8E8E02EA18E427BE00E24CE7 /* AbstractGhost.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -226,8 +242,23 @@
 				8E8E02EE18E43BC500E24CE7 /* GhostAnnotation.m */,
 				8E8E02F018E43BE500E24CE7 /* LocationAnnotation.h */,
 				8E8E02F118E43BE500E24CE7 /* LocationAnnotation.m */,
+				8E8E02F318E9B7DE00E24CE7 /* AbstractAnnotation.h */,
+				8E8E02F418E9B7DE00E24CE7 /* AbstractAnnotation.m */,
 			);
 			name = annotation;
+			sourceTree = "<group>";
+		};
+		8E8E02F618E9B82B00E24CE7 /* ghost */ = {
+			isa = PBXGroup;
+			children = (
+				8E8E02EA18E427BE00E24CE7 /* AbstractGhost.m */,
+				8E8E02E918E427BE00E24CE7 /* AbstractGhost.h */,
+				8E8E02E718E422D600E24CE7 /* ComplexGhost.m */,
+				8E8E02E618E422D600E24CE7 /* ComplexGhost.h */,
+				8E8E02E318E198EF00E24CE7 /* SimpleGhost.h */,
+				8E8E02E418E198EF00E24CE7 /* SimpleGhost.m */,
+			);
+			name = ghost;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +364,12 @@
 				8E8E02E818E422D600E24CE7 /* ComplexGhost.m in Sources */,
 				8E8E02EB18E427BE00E24CE7 /* AbstractGhost.m in Sources */,
 				8E8E02E018E0810200E24CE7 /* Utility.m in Sources */,
+				8E34FBC418EC517B000108DD /* GhostAnnotationView.m in Sources */,
 				8E15842718DC8D3500E1BA52 /* ViewController.m in Sources */,
+				8E34FBC118EC4A77000108DD /* LocationAnnotationView.m in Sources */,
 				8E8E02F218E43BE500E24CE7 /* LocationAnnotation.m in Sources */,
 				8E8E02EF18E43BC500E24CE7 /* GhostAnnotation.m in Sources */,
+				8E8E02F518E9B7DE00E24CE7 /* AbstractAnnotation.m in Sources */,
 				8E8E02E518E198EF00E24CE7 /* SimpleGhost.m in Sources */,
 				8E15842118DC8D3500E1BA52 /* AppDelegate.m in Sources */,
 				8E15841D18DC8D3500E1BA52 /* main.m in Sources */,

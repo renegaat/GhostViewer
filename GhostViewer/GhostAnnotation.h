@@ -8,17 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "AbstractAnnotation.h"
 
-@interface GhostAnnotation : NSObject <MKAnnotation>{
+
+@interface GhostAnnotation : AbstractAnnotation{
     
-    NSString *title;
-    NSString *subtitle;
-    NSString *note;
-    CLLocationCoordinate2D coordinate;
 }
 
-@property (nonatomic, copy) NSString * title;
-@property (nonatomic, copy) NSString * subtitle;
-@property (nonatomic, assign)CLLocationCoordinate2D coordinate;
 
 @end

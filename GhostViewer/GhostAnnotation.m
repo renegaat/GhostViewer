@@ -10,8 +10,5 @@
 
 @implementation GhostAnnotation
 
-@synthesize title;
-@synthesize subtitle;
-@synthesize coordinate;
 
 @end

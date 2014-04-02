@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+#import "AbstractAnnotation.h"
 
-@interface LocationAnnotation : NSObject
+@interface LocationAnnotation : AbstractAnnotation {
+    
+}
+
 
 @end

@@ -20,12 +20,17 @@
 @property (strong, nonatomic) NSString *pollURL;
 @property (strong, nonatomic) NSDictionary *dataObject;
 @property (strong, nonatomic) NSMutableArray *ghostStack;
+@property (strong, nonatomic) NSMutableArray *locationStack;
 
 
 //constants
 extern NSString * const GHOSTLISTRESTCALL;
 extern NSString * const GHOSTRESTCALL;
+extern NSString * const LOCATIONRESTCALL;
 
 - (IBAction)ipRefreshClick:(UIButton *)sender;
+- (IBAction)showLocations:(id)sender;
+- (IBAction)removeLocations:(id)sender;
+
 
 @end

@@ -1,4 +1,4 @@
-//
+			//
 //  ViewController.m
 //  GhostViewer
 //
@@ -9,19 +9,24 @@
 #import "ViewController.h"
 #import "SimpleGhost.h"
 #import "GhostAnnotation.h"
-
+#import "GhostAnnotationView.h"
+#import "LocationAnnotation.h"
+#import "LocationAnnotationView.h"
 
 
 // private
 @interface ViewController ()
--(void)updateAnnotations;
+-(void)updateInfoField:(NSString *)text;
 @end
 
 
 bool running = false;
+NSMutableData *receivedData;
+
 
 NSString * const GHOSTLISTRESTCALL = @"/DDR_GhostHive/admin/getAllSimpleGhosts/";
 NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
+NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
 
 @implementation ViewController
 
@@ -34,9 +39,21 @@ NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
     
+    _mapView.delegate = self;
+    
     if(_ghostStack==nil){
         _ghostStack = [[NSMutableArray alloc]init];
     }
+    
+    if(_locationStack==nil){
+        _locationStack = [[NSMutableArray alloc]init];
+    }
+    
+    
+    if(receivedData == nil){
+        receivedData = [[NSMutableData alloc]init];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,52 +103,140 @@ NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
     }
 }
 
+
 - (void)connection:(NSURLConnection *) connection didReceiveData:(NSData *)data {
-    // desirialize data and update ghost stack
-    NSError *jsonParsingError = nil;
-    NSArray *resultStack = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
+    [receivedData appendData:data];
+}
+
+ - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
+
+     // desirialize data and update ghost stack
+     NSError *jsonParsingError = nil;
+     NSArray *resultStack = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:&jsonParsingError];
+     
+     //set ghost simple annotations
+     
+     _dataObject= [resultStack objectAtIndex:0];
+     
+     if([_dataObject objectForKey:@"name"] != nil){
+         
+         NSLog(@"return from get simple ghost call");
+         
+         [_mapView removeAnnotations:_ghostStack];
+         [_ghostStack removeAllObjects];
+         
+         
+         for(int i=0; i<[resultStack count];i++)
+         {
+             GhostAnnotation *temp = [[GhostAnnotation alloc]init];
+             
+             _dataObject= [resultStack objectAtIndex:i];
+             NSLog(@"ID: %@", [_dataObject objectForKey:@"id"]);
+             NSLog(@"NAME: %@", [_dataObject objectForKey:@"name"]);
+             
+             NSString *tmpString = [NSString stringWithFormat:@"Name : %@, Destination: %@",[_dataObject objectForKey:@"name"],[[_dataObject objectForKey:@"destinationId"]stringValue]];
+             [temp setSize:15];
+             [temp setTitle: tmpString];
+             [temp setCoordinate:CLLocationCoordinate2DMake([[_dataObject objectForKey:@"latitude"]doubleValue],[[_dataObject objectForKey:@"longitude"]doubleValue])];
+             [_ghostStack addObject:temp];
+         }
+         [_mapView addAnnotations:_ghostStack];
+     }
+     
+     // decode ghost rich data
+     
     
-    //clear the stack
-    [_ghostStack removeAllObjects];
+     // set location anotations
+     
+     if([_dataObject objectForKey:@"locationName"] != nil){
+         NSLog(@"return from get locations call");
+         
+         [_mapView removeAnnotations:_locationStack];
+         [_locationStack removeAllObjects];
+
+         for(int i=0; i<[resultStack count];i++)
+         {
+             
+             LocationAnnotation *temp = [[LocationAnnotation alloc]init];
+             
+             _dataObject= [resultStack objectAtIndex:i];
+             NSLog(@"ID: %@", [_dataObject objectForKey:@"id"]);
+             NSLog(@"NAME: %@", [_dataObject objectForKey:@"locationName"]);
+          
+             // display the names of the locations
+             NSArray *locationNames= [_dataObject valueForKeyPath:@"locationInfo.infoName"];
+             NSString *names = [locationNames componentsJoinedByString:@"\n"];
+             NSString *tmpString = [NSString stringWithFormat:@"Name : %@, id: %@ , Location Names : %@",[_dataObject objectForKey:@"locationName"],[[_dataObject objectForKey:@"id"]stringValue],names];
+             [temp setTitle: tmpString];
+             
+             // set the size property for the annotation, more info is bigger annotation
+             [temp setSize:[locationNames count]];
+             
+             [temp setCoordinate:CLLocationCoordinate2DMake([[_dataObject objectForKey:@"latitude"]doubleValue],[[_dataObject objectForKey:@"longitude"]doubleValue])];
+             [_locationStack addObject:temp];
+         }
+         [_mapView addAnnotations:_locationStack];
+     }
+     [receivedData  setLength:0];
+ }
+
+- (void)updateInfoField:(NSString *)text{
+    NSLog(@"updateInfoField");
+    [_messageView setText:text];
+}
+
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView {
+    NSLog(@"didSelectAnnotationView");
+    [self updateInfoField: aView.annotation.title];
+}
+
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
-    for(int i=0; i<[resultStack count];i++)
-    {
-        _dataObject= [resultStack objectAtIndex:i];
-        NSLog(@"ID: %@", [_dataObject objectForKey:@"id"]);
-        NSLog(@"NAME: %@", [_dataObject objectForKey:@"name"]);
-        
-        SimpleGhost *tmpGhost = [[SimpleGhost alloc] init:[[_dataObject objectForKey:@"id"]integerValue]
-        name:[_dataObject objectForKey:@"name"]
-        longitude:[[_dataObject objectForKey:@"longitude"]floatValue]
-        latitude:[[_dataObject objectForKey:@"latitude"]floatValue]];
-        
-        [_ghostStack addObject:tmpGhost];
+    MKAnnotationView *annotationView = nil ;
+    
+    if ([annotation isKindOfClass:[GhostAnnotation class]]){
+         static NSString *identifier = @"GhostAnnotation";
+         annotationView = [[GhostAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
     }
-    if([_ghostStack count] > 0){
-        [self updateAnnotations];
+    
+    if ([annotation isKindOfClass:[LocationAnnotation class]]){
+        static NSString *identifier = @"LocationAnnotation";
+        annotationView = [[LocationAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
     }
+
+    return annotationView;
 }
 
--(void) updateAnnotations {
-    [_mapView removeAnnotations:_mapView.annotations];
-    // iterate and draw annotations
-    for(SimpleGhost *simpleGhost in _ghostStack){
-        GhostAnnotation *temp = [[GhostAnnotation alloc]init];
-        [temp setTitle:simpleGhost.name];
-        [temp setSubtitle: @""];
-        [temp setCoordinate:CLLocationCoordinate2DMake([simpleGhost latitude],[simpleGhost longitude])];
-        [_mapView addAnnotation:temp];
-    }
-}
-
-
--(void)connectionDidFinishLoading: (NSURLConnection *)connection {
-    connection = nil;
-}
 
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error{
     NSLog(@"Connection to ghost service failed");
     self.ipField.backgroundColor = [UIColor redColor];
 }
 
+
+- (IBAction)showLocations:(id)sender {
+
+    NSLog(@"Show Loccations");
+    NSString *URL = [NSString stringWithFormat:@"http://%@/%@", _ipField.text,LOCATIONRESTCALL];
+    NSLog(@"URl Construct : %@",URL);
+
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:URL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20];
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    
+    if (connection) {
+        //connection ok
+        self.ipField.backgroundColor = [UIColor greenColor];
+    }else{
+        //connection fail
+        self.ipField.backgroundColor = [UIColor redColor];
+    }
+}
+
+- (IBAction)removeLocations:(id)sender {
+    [_mapView removeAnnotations:_locationStack];
+    [_messageView setText:@""];
+}
 @end

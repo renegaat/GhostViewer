@@ -9,5 +9,4 @@
 #import "LocationAnnotation.h"
 
 @implementation LocationAnnotation
-
 @end
