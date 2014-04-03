@@ -17,7 +17,7 @@
          reuseIdentifier:(NSString *)reuseIdentifier {
     if(self = [super initWithAnnotation:annotation
                         reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }

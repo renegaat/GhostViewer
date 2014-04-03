@@ -193,20 +193,35 @@ NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
 
 
 
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
     MKAnnotationView *annotationView = nil ;
     
     if ([annotation isKindOfClass:[GhostAnnotation class]]){
-         static NSString *identifier = @"GhostAnnotation";
-         annotationView = [[GhostAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+         static NSString *ghostIdentifier = @"GhostAnnotation";
+        
+         annotationView = (GhostAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:ghostIdentifier];
+    
+        if(annotationView == nil){
+            annotationView = [[GhostAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:ghostIdentifier];
+        }else{
+            [annotationView setAnnotation:annotation];
+        }
     }
     
     if ([annotation isKindOfClass:[LocationAnnotation class]]){
-        static NSString *identifier = @"LocationAnnotation";
-        annotationView = [[LocationAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        static NSString *locationIdentifier = @"LocationAnnotation";
+    
+        annotationView = (LocationAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:locationIdentifier];
+        
+        if(annotationView == nil){
+            annotationView = [[LocationAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:locationIdentifier];
+            
+        }else{
+            [annotationView setAnnotation:annotation];
+        }
     }
-
     return annotationView;
 }
 
