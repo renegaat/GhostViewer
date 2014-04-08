@@ -18,15 +18,17 @@
     if(self = [super initWithAnnotation:annotation
                         reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = [UIColor clearColor];
+        anno = (LocationAnnotation *)annotation;
+        self.size = anno.size;
     }
+    
     return self;
 }
 
 - (void)setAnnotation:(id <MKAnnotation>)annotation {
     super.annotation = annotation;
     if([annotation isMemberOfClass:[LocationAnnotation class]]) {
-        anno = (LocationAnnotation *)annotation;
-        float magSquared = anno.size ;
+        float magSquared = self.size ;
         self.frame = CGRectMake(0, 0, magSquared * .75,  magSquared * .75);
     } else {
         self.frame = CGRectMake(0,0,0,0);
@@ -34,7 +36,7 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    float magSquared = anno.size;
+    float magSquared = self.size;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(context, 1.0, 1.0 - magSquared * 0.015, 0.211, .6);
     CGContextFillEllipseInRect(context, rect);

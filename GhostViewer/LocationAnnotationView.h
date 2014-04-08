@@ -12,8 +12,11 @@
 
 
 @interface LocationAnnotationView : MKAnnotationView{
-    int size;
+  
     LocationAnnotation *anno;
 }
+
+@property(nonatomic, assign) int size;
+
 
 @end
