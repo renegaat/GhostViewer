@@ -8,12 +8,16 @@
 
 #import "AbstractAnnotation.h"
 
+
+
+
 @implementation AbstractAnnotation
 
 @synthesize title;
 @synthesize subtitle;
 @synthesize coordinate;
 @synthesize size;
+@synthesize hiveColor;
 
 - (id)init{
 	if ( self = [super init] ) {

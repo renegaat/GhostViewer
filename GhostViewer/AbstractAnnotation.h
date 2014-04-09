@@ -19,6 +19,15 @@
     int size;
 }
 
+typedef enum {
+    BLACK,
+    WHITE,
+    GREEN,
+    BLUE,
+    RED
+} HiveColor;
+
+@property (nonatomic, assign) HiveColor hiveColor ;
 
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSString * subtitle;

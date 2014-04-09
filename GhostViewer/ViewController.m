@@ -24,6 +24,7 @@ bool running = false;
 NSMutableData *receivedData;
 
 
+
 NSString * const GHOSTLISTRESTCALL = @"/DDR_GhostHive/admin/getAllSimpleGhosts/";
 NSString * const GHOSTRESTCALL = @"/DDR_GhostHive/admin/getSimpleGhostById/";
 NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
@@ -48,7 +49,6 @@ NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
     if(_locationStack==nil){
         _locationStack = [[NSMutableArray alloc]init];
     }
-    
     
     if(receivedData == nil){
         receivedData = [[NSMutableData alloc]init];
@@ -114,6 +114,8 @@ NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
      NSError *jsonParsingError = nil;
      NSArray *resultStack = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:&jsonParsingError];
      
+     NSArray *colors = [NSArray arrayWithObjects:@"BLACK", @"WHITE", @"GREEN", @"BLUE",@"RED",nil];
+     
      //set ghost simple annotations
      
      _dataObject= [resultStack objectAtIndex:0];
@@ -166,8 +168,12 @@ NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
              // display the names of the locations
              NSArray *locationNames= [_dataObject valueForKeyPath:@"locationInfo.infoName"];
              NSString *names = [locationNames componentsJoinedByString:@"\n"];
+    
+             HiveColor color = [colors indexOfObject: [_dataObject objectForKey:@"hiveColor"]];
+    
              NSString *tmpString = [NSString stringWithFormat:@"Name : %@, id: %@ , Location Names : %@",[_dataObject objectForKey:@"locationName"],[[_dataObject objectForKey:@"id"]stringValue],names];
              [temp setTitle: tmpString];
+             [temp setHiveColor:color];
              
              // set the size property for the annotation, more info is bigger annotation
              [temp setSize:[locationNames count]];
@@ -180,17 +186,16 @@ NSString * const LOCATIONRESTCALL = @"/DDR_GhostHive/admin/getLocations/";
      [receivedData  setLength:0];
  }
 
+
 - (void)updateInfoField:(NSString *)text{
     NSLog(@"updateInfoField");
     [_messageView setText:text];
 }
 
-
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView {
     NSLog(@"didSelectAnnotationView");
     [self updateInfoField: aView.annotation.title];
 }
-
 
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
